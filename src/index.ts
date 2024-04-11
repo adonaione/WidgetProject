@@ -10,8 +10,13 @@
 // unless you set up scripts in package.json to do it for you
 
 
-import { Canvas } from './widget';
+import { Canvas, Component } from './widget';
+
 
 const canvas = new Canvas(document.body);
 console.log(canvas);
 
+const firstComponent = new Component();
+console.log(firstComponent);
+console.log(firstComponent.shape);
+console.log(firstComponent.shape.attributes);

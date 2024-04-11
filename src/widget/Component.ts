@@ -1,8 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import { GridUnit } from './types';
-import Canvas from './Canvas'
+import Canvas from './Canvas';
+import Container from './Container';
+import { LeftLeaningContainer } from './containers';
 
-class Component {
+
+export default class Component {
+   
     constructor(
         private readonly _id: string = uuidv4(),
         private _width: GridUnit = 2,
@@ -10,6 +14,7 @@ class Component {
         private _locationTop: GridUnit = 1,
         private _locationLeft: GridUnit = 1,
         private _content: string = '<div></div>',
+        private _shape: Container = new LeftLeaningContainer(),
         private _canvas?: Canvas
     ){}
 
@@ -57,6 +62,13 @@ class Component {
     
     public get id(): string {
         return this._id;
+    }
+
+    public get shape(): Container {
+        return this._shape;
+    }
+    public set shape(value: Container) {
+        this._shape = value;
     }
     
 }
