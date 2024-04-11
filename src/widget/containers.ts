@@ -5,7 +5,6 @@ class LeftLeaningContainer extends Container {
     constructor(){
         super()
         this.borderRadius = '10% 25%'
-
     }
 }
 
