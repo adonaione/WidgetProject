@@ -110,8 +110,9 @@ class Canvas {
         div.innerHTML = component.content;
         let key;
         for (key in this.state) {
+            console.log(key, div.innerHTML);
             if (div.innerHTML.includes(`{{ ${key} }}`)) {
-                div.innerHTML.split(`{{ ${key} }}`).join(this.state[key]);
+                div.innerHTML = div.innerHTML.split(`{{ ${key} }}`).join(this.state[key]);
             }
         }
     }
@@ -1282,7 +1283,8 @@ const newComponent = new widget_1.Component();
 newComponent.locationLeft = 3;
 newComponent.locationTop = 5;
 newComponent.content = '<p>Hello I am {{ firstName }} from {{ city }}';
-canvas.state = { city: 'New York' };
+canvas.addComponent(newComponent);
+canvas.state = { city: 'New Mexico' };
 canvas.addComponent(secondComponent);
 
 })();

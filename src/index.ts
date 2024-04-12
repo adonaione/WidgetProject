@@ -46,8 +46,8 @@ newComponent.locationLeft = 3;
 newComponent.locationTop = 5;
 newComponent.content = '<p>Hello I am {{ firstName }} from {{ city }}'
 
-
-canvas.state = { city: 'New York' }
+canvas.addComponent(newComponent)
+canvas.state = { city: 'New Mexico' }
 
 
 canvas.addComponent(secondComponent);

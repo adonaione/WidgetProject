@@ -92,8 +92,9 @@ export default class Canvas{
         div.innerHTML = component.content;
         let key: keyof State;
         for (key in this.state){
+            console.log(key, div.innerHTML)
             if (div.innerHTML.includes(`{{ ${key} }}`)){
-                div.innerHTML.split(`{{ ${key} }}`).join(this.state[key])
+                div.innerHTML = div.innerHTML.split(`{{ ${key} }}`).join(this.state[key])
             }
         }
     }
